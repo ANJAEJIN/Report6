@@ -7,7 +7,6 @@ public class Location {
     int y;
     public Location(String s) {
         if (s.length() == 3) {
-
             char c_x = s.charAt(0);
             char c_y = s.charAt(2);
             x = (int) c_x;
@@ -34,7 +33,5 @@ public class Location {
                 System.out.println("Please enter location again:");
             }
         }
-        this.x = x;
-        this.y = y;
     }
 }
