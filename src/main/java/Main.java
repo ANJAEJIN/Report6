@@ -20,18 +20,28 @@ public class Main {
                 System.out.println("Please enter location to put:");
                 message = scan.nextLine();
                 Location location = new Location(message);
-                player.put(board,location,turn);
+                if(player.judge(board,location)){
+                    player.put(board,location,turn);
+                    turn = 'X';
+                }else{
+                    System.out.println("Duplicate.\n" + "Please enter another location:");
+                    turn = 'O';
+                }
                 board.printBoard();
-                turn = 'X';
             }if(turn == 'X'){
                 String message;
                 Scanner scan = new Scanner(System.in);
                 System.out.println("Please enter location to put:");
                 message = scan.nextLine();
                 Location location = new Location(message);
-                player.put(board,location,turn);
+                if(player.judge(board,location)){
+                    player.put(board,location,turn);
+                    turn = 'O';
+                }else{
+                    System.out.println("Duplicate.\n" + "Please enter another location:");
+                    turn = 'X';
+                }
                 board.printBoard();
-                turn = 'O';
             }
         }
     }
