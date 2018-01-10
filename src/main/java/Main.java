@@ -8,6 +8,8 @@ public class Main {
     public static void main(String[] args){
         Board board = new Board();
         Player player = new Player();
+
+        board.SetBoard();
         board.printBoard();
 
         char turn = 'O';
@@ -17,14 +19,18 @@ public class Main {
                 Scanner scan = new Scanner(System.in);
                 System.out.println("Please enter location to put:");
                 message = scan.nextLine();
-                player.put(message,turn);
+                Location location = new Location(message);
+                player.put(board,location,turn);
+                board.printBoard();
                 turn = 'X';
             }if(turn == 'X'){
                 String message;
                 Scanner scan = new Scanner(System.in);
                 System.out.println("Please enter location to put:");
                 message = scan.nextLine();
-                player.put(message,turn);
+                Location location = new Location(message);
+                player.put(board,location,turn);
+                board.printBoard();
                 turn = 'O';
             }
         }
