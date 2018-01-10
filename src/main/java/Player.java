@@ -3,7 +3,7 @@
  */
 
 public class Player {
-    public char[][] put(String s){
+    public char[][] put(String s,char c){
         Board board = new Board();
         char[][] factor;
         factor = board.SetBoard();
@@ -18,7 +18,7 @@ public class Player {
             y = (int)c_y;
             int z = (int)'0';
             y -= z;
-            factor[y][x] = 'O';
+            factor[y][x] = c;
         }else{
             if(s.length()==4){
                 int x;
@@ -36,7 +36,7 @@ public class Player {
                 y1 -= z;
                 y2 -= z;
                 y = 10*y1 + y2;
-                factor[y][x] = 'O';
+                factor[y][x] = c;
             }else{
                 System.out.println("Please enter location again:");
             }

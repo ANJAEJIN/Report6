@@ -10,10 +10,23 @@ public class Main {
         Player player = new Player();
         board.printBoard();
 
-        String message;
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Please enter location to put:");
-        message = scan.nextLine();
-        player.put(message);
+        char turn = 'O';
+        while(true) {
+            if (turn == 'O'){
+                String message;
+                Scanner scan = new Scanner(System.in);
+                System.out.println("Please enter location to put:");
+                message = scan.nextLine();
+                player.put(message,turn);
+                turn = 'X';
+            }if(turn == 'X'){
+                String message;
+                Scanner scan = new Scanner(System.in);
+                System.out.println("Please enter location to put:");
+                message = scan.nextLine();
+                player.put(message,turn);
+                turn = 'O';
+            }
+        }
     }
 }
