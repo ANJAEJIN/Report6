@@ -32,7 +32,7 @@ public class Main {
                     turn = 'O';
                 }
                 board.printBoard();
-            }if(turn == 'X'){
+            }else if(turn == 'X'){
                 String message;
                 Scanner scan = new Scanner(System.in);
                 System.out.println("Please enter location to put:");
