@@ -7,10 +7,14 @@ public class Board {
     int j=0;
     char[][] factor;
 
+    /*Prepare a 15 * 15 checkerboard by the International gomoku rules.*/
     public Board () {
         this.factor = new char[16][16];
     }
 
+    /*Coordinate information is displayed on the border
+    so that the coordinate information can be easily understood.
+    The X axis is alphabet and the Y axis is number*/
     public void SetBoard() {
         for (i = 1; i < factor.length; i++) {
             if (i<10){
@@ -28,6 +32,7 @@ public class Board {
         }
     }
 
+    /*Methods to print the current board*/
     public void printBoard(){
         for (i = 0; i < factor.length; i++) {
             for ( j = 0; j < factor[i].length; j++) {

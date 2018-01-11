@@ -3,20 +3,17 @@
  */
 
 public class Player {
-    char[][] factor;
-
-    public Player() {
-        this.factor = new char[16][16];
-    }
-
+    /*Put the current player's stone(c) at the position corresponding to the coordinate value(l).*/
     public void put(Board b,Location l,char c){
         b.factor[l.y][l.x] = c;
     }
 
+    /*Make sure that the coordinate information you entered is already filled in. (Prevent duplication)*/
     public boolean judge(Board b,Location l){
         return b.factor[l.y][l.x] != 'O' && b.factor[l.y][l.x] != 'X';
     }
 
+    /*The Boolean method for determining when the game ends when five stones are placed in succession*/
     public boolean finish(Board b, Location l, char c){
         int point1=1;
         int point2=1;
@@ -72,6 +69,7 @@ public class Player {
         }
 
         if (point1 == 5 || point2 == 5 || point3 == 5 || point4 == 5){
+            /*If the game is over, announce the winner.*/
             System.out.println("winner is"+c+". Congratulations");
             return false;
         }else {
