@@ -5,7 +5,12 @@
 public class Location {
     int x;
     int y;
-    public Location(String s) {
+
+    public Location() {
+        this.x=x;
+        this.y=y;
+    }
+    public void SetLocation(String s){
         if (s.length() == 3) {
             char c_x = s.charAt(0);
             char c_y = s.charAt(2);

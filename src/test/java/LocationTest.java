@@ -5,7 +5,8 @@ import static org.junit.jupiter.api.Assertions.*;
 public class LocationTest {
     @Test
     public void Test(){
-        Location l = new Location("A,1");
+        Location l = new Location();
+        l.SetLocation("A,1");
         int x = l.x;
         int y = l.y;
         assertEquals(1, x);

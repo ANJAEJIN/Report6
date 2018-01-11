@@ -6,6 +6,7 @@ public class Board {
     int i=0;
     int j=0;
     char[][] factor;
+
     public Board () {
         this.factor = new char[16][16];
     }
@@ -27,16 +28,10 @@ public class Board {
         }
     }
 
-    public char[][] getFactor() {
-        return this.factor;
-    }
-
     public void printBoard(){
-        char[][] factor;
-        factor = getFactor();
         for (i = 0; i < factor.length; i++) {
             for ( j = 0; j < factor[i].length; j++) {
-                System.out.print(factor[i][j]);
+                System.out.print(this.factor[i][j]);
             }
             System.out.println();
         }
